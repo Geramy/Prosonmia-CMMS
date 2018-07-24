@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+	RewriteCond %{REQUEST_FILENAME} -d [OR]
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_URI} ^/(index\.php)?$
+	RewriteRule ^ - [L]
+	
+	RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)$ /index.php?module=$1&action=$2&id=$3&id1=$4&id2=$5 [L]
+	RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)$ /index.php?module=$1&action=$2&id=$3&id1=$4 [L]
+	RewriteRule ^([^/]*)/([^/]*)/([^/]*)$ /index.php?module=$1&action=$2&id=$3 [L]
+	RewriteRule ^([^/]*)/([^/]*)/([^/]*)$ /index.php?module=$1&action=$2&id=$3 [L]
+	RewriteRule ^([^/]*)/([^/]*)$ /index.php?module=$1&action=$2 [L]
+	RewriteRule ^([^/]*)$ /index.php?action=$1 [L]
+</IfModule>

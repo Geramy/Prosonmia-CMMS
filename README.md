@@ -14,3 +14,6 @@ includes -> config.php
 The next step is to of course install a mysql variant and import the .sql file  
 then setup the mysqli configuration file in:  
 incldues -> connnect.php
+
+You can use this software at:
+http://prosonmia.com
